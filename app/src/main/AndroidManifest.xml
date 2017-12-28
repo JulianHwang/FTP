@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.dc.ftp">
+
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <!-- 接收短信权限 -->
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+
+    <!-- 读取程序信息  imei -->
+    <uses-permission android:name="android.permission.READ0_PHONE_STATE" />
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <!-- Push service 运行需要的权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <!-- for log. -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER" />
+    <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_LOGS" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" />
+
+
+
+    <application
+        android:name=".application.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainLogoActivity"
+            android:screenOrientation="portrait"
+          >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+
+      <!--高德地图的相关配置-->
+        <meta-data android:name="com.amap.api.v2.apikey" android:value="9d4ae187e2f0b64a9b7f9763331b8874">
+            //开发者申请的key
+        </meta-data>
+
+        //请在application标签中声明service组件,每个app拥有自己单独的定位service。
+        <service android:name="com.amap.api.location.APSService"></service>
+
+
+
+
+
+
+        <!--适配安卓7.0拍照权限问题  -->
+        <!--exported:要求必须为false，为true则会报安全异常。
+        grantUriPermissions:true，表示授予 URI 暂时訪问权限。-->
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.dc.ftp.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true" >
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+
+
+
+        <!-- 填写您从Mob开发者后台中得到的Appkey和AppSecret 下面引用的是从Mob官网已经申请过的FTP项目对应key和Secret，无需更改-->
+        <meta-data android:name="Mob-AppKey" android:value="2335fc9df62dc"/>
+        <meta-data android:name="Mob-AppSecret" android:value="4e80ea7d68a006be5fbd3b88c71b75f0"/>
+
+        <!--微信分享回调 -->
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+
+
+        <activity
+            android:name="com.mob.tools.MobUIShell"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:windowSoftInputMode="stateHidden|adjustResize" >
+
+           <!-- ShareSDK<strong>3.1.0版本之前</strong>才需要在MobUIShell下面注册此意图，3.1.0版本之后（包含3.1.0）不需要注册此intent-->
+            <!--当前集成的版本：3.1.2 -->
+            <!--   <intent-filter>
+                     <data android:scheme="tencent100371282" />
+                     <action android:name="android.intent.action.VIEW" />
+                     <category android:name="android.intent.category.BROWSABLE" />
+                     <category android:name="android.intent.category.DEFAULT" />
+                 </intent-filter>-->
+
+            <!-- 调用新浪原生SDK，需要注册的回调activity -->
+            <intent-filter>
+                <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <!--集成line客户端登录授权，需要添如下格式的过滤器-->
+            <intent-filter>
+                <data android:scheme="line.1477692153" />
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+        </activity>
+
+
+        <!--（3.1.0版本之后（包含3.1.0）才需要注册此Activity）如果集成QQ分享，或者使用QQ客户端来进
+        行QQ空间的分享，须要在此处添加一个回调activity，对ACTION_VIEW事件的过滤器，其中的scheme是
+        “tencent”前缀再开发者应用的加上appId。如果此Activity和过滤器不设置，则分享结束以后不能得到正确的回调。-->
+        <activity
+            android:name="cn.sharesdk.tencent.qq.ReceiveActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="tencent1105593610" />
+            </intent-filter>
+        </activity>
+
+
+
+
+
+
+        <activity
+            android:name=".LoadIntroduceActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name"
+           >
+        </activity>
+
+
+        <activity
+            android:name=".MainTabActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name"
+          >
+        </activity>
+
+
+        <activity
+            android:name="com.dc.ftp.activity.home.ShowBannerViewDetail"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name"
+            >
+        </activity>
+
+
+        <activity
+            android:name="com.dc.ftp.activity.user.SPLoginActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name"
+            >
+        </activity>
+
+
+        <activity
+            android:name="com.dc.ftp.activity.user.ForgotPwdActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name"
+            >
+        </activity>
+
+        <activity
+            android:name="com.dc.ftp.activity.user.ForgotPwd2Activity"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name"
+            >
+        </activity>
+
+        <activity
+            android:name="com.dc.ftp.activity.user.ShowRegisterContextActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name"
+            >
+        </activity>
+
+        <activity
+            android:name="com.dc.ftp.activity.user.RegisterActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name"
+            >
+        </activity>
+
+
+
+
+
+
+
+    </application>
+
+</manifest>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scrollbars="vertical"
+        >
+
+     <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+         <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+            <!-- test带动画特效的轮播图 -->
+            <com.dc.ftp.view.mzbanner.MZBannerView
+                android:id="@+id/my_banner"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:layout_marginTop="15dp"
+                app:canLoop="true"
+                app:open_mz_mode="true"
+                >
+            </com.dc.ftp.view.mzbanner.MZBannerView>
+
+
+
+             <RelativeLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content">
+                 <Button
+                     android:id="@+id/button1"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:text="按钮一"
+                     android:layout_below="@+id/textView1"
+                     android:layout_centerHorizontal="true" />
+
+                 <TextView
+                     android:textSize="20sp"
+                     android:id="@+id/textView2"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:text="地址二"
+                     android:layout_below="@+id/button1"
+                     android:layout_alignLeft="@+id/textView1"
+                     android:layout_alignStart="@+id/textView1"
+                     android:layout_marginTop="10dp" />
+
+                 <TextView
+                     android:id="@+id/textView1"
+                     android:textSize="20sp"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:text="地址一"
+                     android:layout_centerVertical="true"
+                     android:layout_centerHorizontal="true" />
+
+                 <Button
+                     android:id="@+id/button2"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:text="按钮二"
+                     android:layout_below="@+id/textView2"
+                     android:layout_alignLeft="@+id/button1"
+                     android:layout_alignStart="@+id/button1" />
+
+
+
+
+
+
+
+             </RelativeLayout>
+
+
+
+
+
+
+
+
+           </LinearLayout>
+
+      </ScrollView>
+
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+
+</LinearLayout>

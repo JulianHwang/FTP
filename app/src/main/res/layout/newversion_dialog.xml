@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_shape"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:layout_margin="10dp"
+    android:padding="15dip" >
+
+    <TextView
+        android:id="@+id/name"
+        style="@style/black18Text"
+        android:layout_marginTop="7dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="发现新版本" />
+    
+    <TextView 
+        style="@style/gray14Text"
+        android:id="@+id/versionInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:singleLine="false"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:text="1.更新了数据\n2.优化了界面"/>
+
+    <LinearLayout
+        android:id="@+id/lay1" 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="@mipmap/update_pro"
+        android:gravity="center_vertical"
+        android:visibility="gone"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/show_progress"
+            style="@style/black13Text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="4"
+            android:text="0%"
+            android:visibility="visible" />
+
+        <ProgressBar
+            android:id="@+id/content_view_progress"
+            style="@style/mProgress_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:layout_marginLeft="10dp"
+             android:progressDrawable="@drawable/update_progress_style"
+            android:layout_marginRight="20dp"
+            android:layout_weight="1"
+            android:max="100"
+            android:progress="0"
+            android:visibility="visible" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="7dp"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/newversion_exit"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:background="@mipmap/update_exit_btn"
+            android:tag="100"
+            android:text="退出"
+            android:layout_marginRight="7dp"
+            android:textColor="@color/new_black_color" />
+
+        <Button
+            android:id="@+id/download_newapp"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:background="@mipmap/update_btn"
+            android:text="更新"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+</LinearLayout>

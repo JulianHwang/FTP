@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <include layout="@layout/page_head" />
+
+    <LinearLayout 
+        android:gravity="center"
+            android:layout_margin="20dp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+        >
+            <TextView
+            android:textColor="#323232"
+            android:textSize="16sp"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="我们将要把验证码发送到：" />
+            <TextView
+                android:id="@+id/phone"
+            style="@style/red16Text" 
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/load" />
+    </LinearLayout>
+
+
+            <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="22dp"
+                  android:orientation="vertical"
+                  android:layout_marginLeft="22dp"
+                  android:background="@drawable/small_circleconor_shape"
+                 >
+
+
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:paddingLeft="6dp"
+                    android:paddingRight="6dp"
+                    android:orientation="horizontal"
+                    android:gravity="center" >
+
+                    <ImageView
+                        android:id="@+id/img_yzm"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="10dp"
+                        android:src="@mipmap/yzm" />
+
+                    <EditText
+                        android:id="@+id/user_yzm"
+                        style="@style/edittext"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="13dp"
+                        android:background="@null"
+                        android:hint="验证码"
+                        android:maxLength="20"
+                        android:maxLines="1"
+                        android:width="190dip" />
+
+                      <TextView
+				            android:id="@+id/send"
+				            android:layout_centerVertical="true"
+				            android:layout_height="40dp"
+				            android:layout_width="90dp"
+				            android:background="@drawable/small_circleconor_shape_orange"
+				            style="@style/white14Text"
+				            android:text="获取验证码"
+				            android:clickable="true"
+				            android:gravity="center"
+				            android:layout_alignParentRight="true"
+				            android:layout_marginRight="5dp" />
+
+                </LinearLayout>
+
+
+
+
+
+                        <View
+		                    android:layout_width="match_parent"
+		                    android:layout_height="0.3dp"
+		                     android:layout_marginTop="10dp"
+		                     android:layout_marginBottom="10dp"
+		                    android:background="#c9c9c9" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="6dp"
+                    android:paddingRight="6dp"
+                    android:gravity="center" >
+
+                    <ImageView
+                        android:id="@+id/img_pwd"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="10dp"
+                        android:src="@mipmap/upwd" />
+
+                    <EditText
+                        android:id="@+id/user_pwd"
+                        style="@style/edittext"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="13dp"
+                        android:background="@null"
+                        android:hint="新密码"
+                        android:maxLength="20"
+                        android:maxLines="1"
+                        android:width="190dip" />
+                </LinearLayout>
+
+               <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.3dp"
+                     android:layout_marginTop="15dp"
+                     android:layout_marginBottom="15dp"
+                    android:background="#c9c9c9" />
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                   android:paddingLeft="6dp"
+                    android:paddingRight="6dp"
+                    android:gravity="center" >
+
+                    <ImageView
+                        android:id="@+id/img_pwd2"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="10dp"
+                        android:src="@mipmap/confirm_pwd" />
+
+                    <EditText
+                        android:id="@+id/user_pwd2"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/edittext"
+                        android:layout_marginLeft="13dp"
+                        android:background="@null"
+                        android:hint="确认新密码"
+                        android:maxLength="16"
+                        android:maxLines="1"
+                        android:width="190dip" />
+                </LinearLayout>
+
+                </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+    <TextView
+        android:id="@+id/forget_pwd"
+        android:text="完&#160;&#160;&#160;&#160;成"
+        style="@style/button_orange"/>
+
+</LinearLayout>

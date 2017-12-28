@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+
+    <LinearLayout
+        android:id="@+id/myuserframe_sx"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <include layout="@layout/page_head"/>
+
+
+        <FrameLayout
+            android:id="@+id/content_frame"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            style="@style/separator_line">
+        </View>
+
+
+        <RadioGroup
+            android:id="@+id/rg_tab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@color/white"
+            android:orientation="horizontal" >
+
+            <RadioButton
+                android:id="@+id/tab_one"
+                style="@style/tab_bar"      
+                android:drawableTop="@drawable/tab_item_home_selector"
+                android:text="首页" />
+
+
+            <RadioButton
+                android:id="@+id/tab_two"
+                style="@style/tab_bar"
+                android:drawableTop="@drawable/tab_item_category_selector"
+                android:text="借款"
+              />
+
+            <RadioButton
+                android:id="@+id/tab_three"
+                style="@style/tab_bar"
+                android:drawableTop="@drawable/tab_item_shopcart_selector"
+                android:text="相关" />
+
+            <RadioButton
+                android:id="@+id/tab_four"
+                style="@style/tab_bar"
+                android:drawableTop="@drawable/tab_item_mine_selector"
+                android:text="账户" />
+        </RadioGroup>
+    </LinearLayout>
+
+
+
+</FrameLayout>

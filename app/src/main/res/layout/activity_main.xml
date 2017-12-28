@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.dc.ftp.MainLogoActivity">
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+
+
+        <ImageView
+            android:id="@+id/startPic"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@mipmap/b_back"
+            android:scaleType="fitXY"
+            />
+
+
+
+        <Button
+            android:id="@+id/sendphonenum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="7dp"
+            android:background="@drawable/small_circleconor_shape_alpha_enter"
+            android:text=""
+            android:layout_marginTop="15dp"
+            android:textColor="@color/white"
+            android:layout_marginRight="15dp"
+            android:layout_gravity="right"
+            android:textSize="13sp" />
+
+    </FrameLayout>
+</RelativeLayout>

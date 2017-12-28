@@ -1,0 +1,22 @@
+<resources
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingTranslation">
+    <string name="app_name">FTP</string>
+
+    <string name="confirm">确定</string>
+    <string name="cancel">取消</string>
+
+
+    <string name="toast_person_unlogin">请先登录</string>
+
+    <string name="toast_exit_confirm">再按一次退出应用</string>
+
+    <string name="systemNotify">系统提示</string>
+
+    <string name="link_out_of_time">链接超时，请稍候再试</string>
+    <string name="login_failed">登录失败，请稍候再试</string>
+    <string name="login_success">登录成功</string>
+    <string name="load">--</string>
+    <string name="register">注&#160;&#160;册</string>
+
+</resources>

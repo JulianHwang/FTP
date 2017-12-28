@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/line_gray">
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scrollbars="vertical"
+        >
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:id="@+id/lly_unLoginView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/rly_kefu"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/button_p_kuang4"
+                        android:padding="13dp"
+                        android:clickable="true"
+                        android:tag="4" >
+
+                        <ImageView
+                            android:id="@+id/icon1"
+                            android:layout_width="19dp"
+                            android:layout_height="19dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="5dp"
+                            android:background="@mipmap/kefu"
+                            android:layout_alignParentLeft="true"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="5dp"
+                            android:layout_toRightOf="@+id/icon1"
+                            android:text="联系客服"
+                            android:textColor="@color/title_black"
+                            android:textSize="15sp" />
+
+                        <Button
+                            android:layout_width="12dp"
+                            android:layout_height="18dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10dp"
+                            android:background="@mipmap/back_right_gray" />
+                    </RelativeLayout>
+
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.8dp"
+                        android:background="@color/line_gray" />
+
+                    <RelativeLayout
+                        android:id="@+id/rly_aboutus"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/button_p_kuang4"
+                        android:padding="13dp"
+                        android:clickable="true"
+                        android:tag="4" >
+
+                        <ImageView
+                            android:id="@+id/icon2"
+                            android:layout_width="19dp"
+                            android:layout_height="19dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="5dp"
+                            android:background="@mipmap/about_us"
+                            android:layout_alignParentLeft="true"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="5dp"
+                            android:layout_toRightOf="@+id/icon2"
+                            android:text="关于我们"
+                            android:textColor="@color/title_black"
+                            android:textSize="15sp" />
+
+                        <Button
+                            android:layout_width="12dp"
+                            android:layout_height="18dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10dp"
+                            android:background="@mipmap/back_right_gray" />
+                    </RelativeLayout>
+
+
+                    <TextView
+                        android:id="@+id/tv_login"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="50dp"
+                        android:layout_marginRight="50dp"
+                        android:text="登录"
+                        android:clickable="true"
+                        android:layout_marginTop="30dp"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center"
+                        android:background="@drawable/dialog_button_selector"
+                        style="@style/white16Text"/>
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/lly_loginedView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    android:orientation="vertical">
+
+
+                    <RelativeLayout
+                        android:id="@+id/rly_user"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/button_p_kuang4"
+                        android:padding="13dp"
+                        android:clickable="true"
+                        android:tag="4" >
+
+                        <com.dc.ftp.view.CircleImageView
+                            android:id="@+id/icon_user"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="5dp"
+                            android:background="@mipmap/default_user_image"
+                            android:layout_alignParentLeft="true"/>
+
+                        <TextView
+                            android:id="@+id/user_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_toRightOf="@+id/icon_user"
+                            android:text="username"
+                            android:layout_marginTop="10dp"
+                            android:layout_alignParentTop="true"
+                            android:textColor="@color/title_black"
+                            style="@style/black16Text" />
+
+                        <TextView
+                            android:id="@+id/user_phone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_toRightOf="@+id/icon_user"
+                            android:text="phone"
+                            android:layout_below="@+id/user_name"
+                            android:layout_marginTop="5dp"
+                            android:textColor="@color/title_black"
+                            android:textSize="12sp" />
+
+                        <Button
+                            android:layout_width="12dp"
+                            android:layout_height="18dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10dp"
+                            android:background="@mipmap/back_right_gray" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.8dp"
+                        android:background="@color/line_gray" />
+
+
+                    <RelativeLayout
+                        android:id="@+id/rly_kefu_logined"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/button_p_kuang4"
+                        android:padding="13dp"
+                        android:clickable="true"
+                        android:tag="4" >
+
+                        <ImageView
+                            android:id="@+id/icon1_logined"
+                            android:layout_width="19dp"
+                            android:layout_height="19dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="5dp"
+                            android:background="@mipmap/kefu"
+                            android:layout_alignParentLeft="true"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="5dp"
+                            android:layout_toRightOf="@+id/icon1_logined"
+                            android:text="联系客服"
+                            android:textColor="@color/title_black"
+                            android:textSize="15sp" />
+
+                        <Button
+                            android:layout_width="12dp"
+                            android:layout_height="18dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10dp"
+                            android:background="@mipmap/back_right_gray" />
+                    </RelativeLayout>
+
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.8dp"
+                        android:background="@color/line_gray" />
+
+                    <RelativeLayout
+                        android:id="@+id/rly_aboutus_logined"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/button_p_kuang4"
+                        android:padding="13dp"
+                        android:clickable="true"
+                        android:tag="4" >
+
+                        <ImageView
+                            android:id="@+id/icon2_logined"
+                            android:layout_width="19dp"
+                            android:layout_height="19dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="5dp"
+                            android:background="@mipmap/about_us"
+                            android:layout_alignParentLeft="true"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="5dp"
+                            android:layout_toRightOf="@+id/icon2_logined"
+                            android:text="关于我们"
+                            android:textColor="@color/title_black"
+                            android:textSize="15sp" />
+
+                        <Button
+                            android:layout_width="12dp"
+                            android:layout_height="18dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10dp"
+                            android:background="@mipmap/back_right_gray" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.8dp"
+                        android:background="@color/line_gray" />
+
+                    <RelativeLayout
+                        android:id="@+id/rly_share_logined"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/button_p_kuang4"
+                        android:padding="13dp"
+                        android:clickable="true"
+                        android:tag="4" >
+
+                        <ImageView
+                            android:id="@+id/icon3_logined"
+                            android:layout_width="19dp"
+                            android:layout_height="19dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="5dp"
+                            android:background="@mipmap/about_us"
+                            android:layout_alignParentLeft="true"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="5dp"
+                            android:layout_toRightOf="@+id/icon3_logined"
+                            android:text="分享app"
+                            android:textColor="@color/title_black"
+                            android:textSize="15sp" />
+
+                        <Button
+                            android:layout_width="12dp"
+                            android:layout_height="18dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10dp"
+                            android:background="@mipmap/back_right_gray" />
+                    </RelativeLayout>
+
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.8dp"
+                        android:background="@color/line_gray" />
+
+                    <RelativeLayout
+                        android:id="@+id/rly_location_logined"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/button_p_kuang4"
+                        android:padding="13dp"
+                        android:clickable="true"
+                        android:tag="4" >
+
+                        <ImageView
+                            android:id="@+id/icon4_logined"
+                            android:layout_width="19dp"
+                            android:layout_height="19dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="5dp"
+                            android:background="@mipmap/about_us"
+                            android:layout_alignParentLeft="true"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="5dp"
+                            android:layout_toRightOf="@+id/icon4_logined"
+                            android:text="定位"
+                            android:textColor="@color/title_black"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/tv_location"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toLeftOf="@+id/btnIcon"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="7dp"
+                            style="@style/black14Text"
+                            android:text="定位中..."/>
+
+
+
+                        <Button
+                            android:id="@+id/btnIcon"
+                            android:layout_width="12dp"
+                            android:layout_height="18dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10dp"
+                            android:background="@mipmap/back_right_gray" />
+                    </RelativeLayout>
+
+
+
+
+
+
+
+
+                    <TextView
+                        android:id="@+id/tv_logout"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="50dp"
+                        android:layout_marginRight="50dp"
+                        android:text="退出登录"
+                        android:clickable="true"
+                        android:layout_marginTop="30dp"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center"
+                        android:background="@drawable/dialog_button_selector"
+                        style="@style/white16Text"/>
+
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+</LinearLayout>

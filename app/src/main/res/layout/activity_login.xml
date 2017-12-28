@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/page_head"/>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="25dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp" >
+
+        <ImageView
+            android:id="@+id/img_uname"
+            style="@style/gray18Text"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_margin="10dip"
+            android:layout_gravity="center_vertical"
+            android:src="@mipmap/uname" />
+
+        <EditText
+            android:id="@+id/et_name"
+            style="@style/edittext"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="7dip"
+            android:hint="请输入用户名"
+            android:inputType="textPersonName"
+            android:maxLength="20"
+            android:maxLines="1"
+            android:width="190dip" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.3dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp"
+        android:background="#ffffff" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp" >
+
+        <ImageView
+            android:id="@+id/img_upwd"
+            style="@style/gray18Text"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_margin="10dip"
+            android:layout_gravity="center_vertical"
+            android:src="@mipmap/upwd" />
+
+        <EditText
+            android:id="@+id/et_pwd"
+            style="@style/edittext"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="7dip"
+            android:hint="请输入登录密码"
+            android:inputType="textPassword"
+            android:maxLength="16"
+            android:maxLines="1"
+            android:width="190dip" >
+        </EditText>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dip"
+        android:layout_marginRight="15dip"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            style="@style/black14Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:text="记住密码" />
+
+        <ToggleButton
+            android:id="@+id/remember"
+            android:layout_width="40dp"
+            android:layout_height="24dp"
+            android:background="@drawable/torggle_bg"
+            android:checked="true"
+            android:gravity="left|center_vertical"
+            android:layout_marginLeft="18dp"
+            android:textColor="#ffffff"
+            android:textOff=""
+            android:textOn="" />
+
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/tv_login"
+        style="@style/button_orange"
+        android:text="登  录"/>
+
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dip"
+        android:gravity="center" >
+
+        <View
+            android:id="@+id/login_flag"
+            android:layout_width="2dp"
+            android:layout_height="15dp"
+            android:layout_centerInParent="true"
+            android:background="@color/black" />
+
+        <TextView
+            android:id="@+id/forget_pwd"
+            style="@style/gray14Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:padding="5dp"
+            android:layout_toLeftOf="@id/login_flag"
+            android:text="忘记密码" />
+
+        <TextView
+            android:id="@+id/register"
+            style="@style/blue14Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:padding="5dp"
+            android:layout_toRightOf="@id/login_flag"
+            android:text="我要注册" />
+    </RelativeLayout>
+
+</LinearLayout>
